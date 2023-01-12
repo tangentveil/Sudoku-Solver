@@ -59,34 +59,34 @@
 }
 
 .box1 {
-    background-color: #1520A6;
+    background-color: #c8cd3a;
     border: 1px solid white;
     border-radius: 10px;
 }
 
 .box1:hover {
-    background-color: #48aaaD;
+    background-color: #838a06;
     color: black;
 }
 
 .box2 {
-    background-color: #BC5448;
+    background-color: rgb(36, 244, 241);
     border: 1px solid white;
     border-radius: 10px;
 }
 
 .box2:hover {
-    background-color: red;
+    background-color: #08625d;
 }
 
 .box3 {
-    background-color: #028a0f;
+    background-color: #26cf31;
     border: 1px solid white;
     border-radius: 10px;
 }
 
 .box3:hover {
-    background-color: #3Ded97;
+    background-color:#028a0f;
     color: black
 }
 

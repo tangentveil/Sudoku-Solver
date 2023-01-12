@@ -10,17 +10,33 @@ const defaultValues = document.querySelector(".Default-Values");
 SolvePuzzle.addEventListener("click", () => {
   for (var i = 0; i < 9; i++) {
     for (var j = 0; j < 9; j++) {
-      if (document.getElementById(i * 9 + j).value !== 0) {
-        // console.log(parseInt(document.getElementById(i * 9 + j).value));
-        arr[i][j] = parseInt(document.getElementById(i * 9 + j).value);
+      let num = document.getElementById(i * 9 + j).value;
+      if (num) {
+        arr[i][j] = parseInt(num);
       } else {
-        console.log(arr[i][j]);
         arr[i][j] = 0;
       }
     }
   }
 
-  if (validInput(arr)) SudokuSolver(0, 0);
+  let flag = 1;
+
+  // if (arr[0][0] === 0 || (arr[0][0] >= 1 && arr[0][0] <= 9)) {
+  //   flag = 1;
+  // } else {
+  //   // for (let i = 0; i < n; i++) {
+  //   //   for (let j = 0; j < n; j++) {
+  //   //     if (arr[i][j] !== 0) {
+  //   //       if (validInput(arr, arr[i][j], i, j) === 0) {
+  //   //         flag = 0;
+  //   //         break;
+  //   //       }
+  //   //     }
+  //   //   }
+  //   // }
+  // }
+
+  if (flag) SudokuSolver(0, 0);
   else {
     Errorrrr.innerHTML = `Invalid Input, Reset and Try Again!!!`;
 
@@ -55,7 +71,7 @@ let defArr = [
 defaultInputBtn.addEventListener("click", () => {
   for (var i = 0; i < n; i++) {
     for (var j = 0; j < n; j++) {
-      if (defArr[i][j] != 0) {
+      if (defArr[i][j] !== 0) {
         document.getElementById(i * 9 + j).value = defArr[i][j];
       } else document.getElementById(i * 9 + j).value = 0;
     }
@@ -68,18 +84,35 @@ defaultInputBtn.addEventListener("click", () => {
   }, 3000);
 });
 
-function validInput(arr) {
-  //   for (let i = 0; i < n; i++) {
-  //     for (let j = 0; j < n; j++) {
-  //       if(arr[i][j] >= 1 && arr[i][j] <= 9){
-  // 		return 1;
-  // 	  } else {
-  // 		return 0;
-  // 	  }
-  //     }
-  //   }
+function validInput(arr, val, x, y) {
+  for (var i = 0; i < n; i++) {
+    for (var j = 0; j < n; j++) {
+      // for (let k = 0; k < n; k++) {
+      //   if (x !== i && y !== k) {
+      //     if (arr[i][k] === val || arr[k][j] === val) {
+      //       return 0;
+      //     }
+      //   }
+      // }
 
-  return 1;
+      // console.log('sdfsedgf1');
+
+      // let rn = Math.sqrt(n);
+      // let basex = i - (i % rn);
+      // let basey = j - (j % rn);
+
+      // for (let delx = basex; delx < basex + rn; delx++) {
+      //   for (let dely = basey; dely < basey + rn; dely++) {
+      //     if (arr[delx][dely] === val) {
+      //       return 0;
+      //     }
+      //   }
+      // }
+
+      // console.log("sdfsedgf2");
+      return 1;
+    }
+  }
 }
 
 // $(document).ready(function () {

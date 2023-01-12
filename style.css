@@ -6,23 +6,6 @@
     background-color: blanchedalmond;
 }
 
-#logo {
-    width: 100px;
-    height: 100px;
-}
-
-#logo img {
-    width: 100%;
-}
-
-#name {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    font-size: 50px;
-    font-weight: bold;
-}
-
 .status{
     display: flex;
     justify-content: center;
@@ -153,23 +136,16 @@ input:hover {
     background-color: grey;
 }
 
-.error, .Default-Values{
+.error, .Default-Values, .solved{
     font-weight: bold;
     color: Red;
     padding-top: 30px;
 }
 
-#previousButton:hover,
-#nextButton:hover {
-    text-decoration: underline;
-    cursor: pointer
+.Default-Values{
+   color: rgb(123, 123, 14);
 }
 
-#gridArea {
-    display: inline-block;
-    white-space: nowrap
-}
-
-#grid {
-    display: inline-block
+.solved{
+   color: green;
 }

@@ -4,6 +4,7 @@ const SolvePuzzle = document.getElementById("SolvePuzzle");
 const resetBtn = document.getElementById("Reset");
 const defaultInputBtn = document.getElementById("default-Input");
 const Errorrrr = document.querySelector(".error");
+const solved = document.querySelector(".solved");
 const defaultValues = document.querySelector(".Default-Values");
 
 SolvePuzzle.addEventListener("click", () => {
@@ -141,6 +142,11 @@ function check(i, j, val) {
 
 function SudokuSolver(i, j) {
   if (i == n) {
+    solved.innerHTML = `Solved!!!`;
+    setTimeout(() => {
+      solved.innerHTML = ``;
+    }, 3000);
+
     FillBoard(board);
     return;
   }

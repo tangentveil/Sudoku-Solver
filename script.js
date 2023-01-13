@@ -1,5 +1,17 @@
 var arr = [[], [], [], [], [], [], [], [], []];
 
+let defArr = [
+  [9, 0, 0, 0, 0, 3, 0, 0, 0],
+  [0, 0, 4, 0, 0, 6, 0, 2, 3],
+  [0, 2, 8, 0, 0, 5, 1, 9, 0],
+  [0, 0, 0, 0, 5, 2, 0, 0, 0],
+  [0, 0, 3, 0, 0, 0, 4, 0, 0],
+  [0, 5, 0, 0, 0, 0, 3, 0, 0],
+  [0, 4, 0, 1, 0, 9, 0, 0, 5],
+  [0, 0, 0, 0, 6, 4, 2, 0, 0],
+  [0, 6, 9, 0, 0, 0, 0, 0, 0],
+];
+
 const SolvePuzzle = document.getElementById("SolvePuzzle");
 const resetBtn = document.getElementById("Reset");
 const defaultInputBtn = document.getElementById("default-Input");
@@ -42,7 +54,7 @@ SolvePuzzle.addEventListener("click", () => {
 
     setTimeout(() => {
       Errorrrr.innerHTML = ``;
-    }, 3000);
+    }, 1000);
     // console.log("Invalid Input");
     return;
   }
@@ -56,24 +68,13 @@ resetBtn.addEventListener("click", () => {
   }
 });
 
-let defArr = [
-  [9, 0, 0, 0, 0, 3, 0, 0, 0],
-  [0, 0, 4, 0, 0, 6, 0, 2, 3],
-  [0, 2, 8, 0, 0, 5, 1, 9, 0],
-  [0, 0, 0, 0, 5, 2, 0, 0, 0],
-  [0, 0, 3, 0, 0, 0, 4, 0, 0],
-  [0, 5, 0, 0, 0, 0, 3, 0, 0],
-  [0, 4, 0, 1, 0, 9, 0, 0, 5],
-  [0, 0, 0, 0, 6, 4, 2, 0, 0],
-  [0, 6, 9, 0, 0, 0, 0, 0, 0],
-];
 
 defaultInputBtn.addEventListener("click", () => {
   for (var i = 0; i < n; i++) {
     for (var j = 0; j < n; j++) {
       if (defArr[i][j] !== 0) {
         document.getElementById(i * 9 + j).value = defArr[i][j];
-      } else document.getElementById(i * 9 + j).value = 0;
+      } else document.getElementById(i * 9 + j).value = "";
     }
   }
 
@@ -81,7 +82,7 @@ defaultInputBtn.addEventListener("click", () => {
 
   setTimeout(() => {
     defaultValues.innerHTML = ``;
-  }, 3000);
+  }, 1000);
 });
 
 function validInput(arr, val, x, y) {
@@ -178,7 +179,7 @@ function SudokuSolver(i, j) {
     solved.innerHTML = `Solved!!!`;
     setTimeout(() => {
       solved.innerHTML = ``;
-    }, 3000);
+    }, 1000);
 
     FillBoard(board);
     return;

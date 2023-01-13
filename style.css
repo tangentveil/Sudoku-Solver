@@ -13,6 +13,14 @@
     padding: 2px;
 }
 
+.status1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    transition: 0.35s ease-in;
+}
+
 .Heading {
     width: 100%;
     display: flex;

@@ -8,9 +8,15 @@
 
 .status{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2px;
+}
+
+.status p span{
+    color: red;
+    font-weight: 600;
 }
 
 .status1{

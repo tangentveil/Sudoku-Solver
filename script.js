@@ -1,4 +1,8 @@
 
+// to check if whole array is zero
+// if number of zero >= array size (n*n) then whole array is empty.
+let countzero = 0;
+
 let defArr = [
   [9, 0, 0, 0, 0, 3, 0, 0, 0],
   [0, 0, 4, 0, 0, 6, 0, 2, 3],
@@ -22,6 +26,7 @@ const defaultValues = document.querySelector(".Default-Values");
 let arr = [[], [], [], [], [], [], [], [], []];
 
 SolvePuzzle.addEventListener("click", () => {
+  countzero = 0;
   for (var i = 0; i < 9; i++) {
     for (var j = 0; j < 9; j++) {
       let num = document.getElementById(i * 9 + j).value;
@@ -53,6 +58,8 @@ resetBtn.addEventListener("click", () => {
       document.getElementById(i * 9 + j).value = "";
     }
   }
+
+  countzero = 0;
 });
 
 
@@ -77,13 +84,22 @@ defaultInputBtn.addEventListener("click", () => {
 function validInput(arr) {
   for (var i = 0; i < n; i++) {
     for (var j = 0; j < n; j++) {
-      // console.log(arr[i][j]);
       if (isNaN(arr[i][j])) {
+        countzero = 0;
         return 0;
       }
+
+      if(arr[i][j] === 0) countzero += 1;
     }
-    // console.log('\n');
   }
+
+  // console.log(countzero);
+
+  if(countzero >= n*n){
+    countzero = 0;
+    return 0;
+  } 
+
   return 1;
 }
 
